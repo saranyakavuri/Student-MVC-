@@ -1,0 +1,42 @@
+﻿
+<div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <ul class="nav navbar-nav" style="color:antiquewhite">
+            @*<li class="dropdown">
+                <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown" style="font-size:20px;font-family:'Comic Sans MS';color:cornflowerblue">
+                    Add Student<span class="caret"></span>*@
+            <br />
+            <br />
+            <br />
+            <li style="font-family:'Times New Roman', Times, serif">@Html.ActionLink("ADD STUDENT", "AddStudent", "Home", null, new { id = "item 1" })</li>
+            @*<li style="color:blue;font-family:'Comic Sans Ms'">  @Html.ActionLink("VIEW STUDENT", "viewstudent", "Home", null, new { id = "item 2" })</li>*@
+
+            @*</ul>*@
+            @*</a>
+                </li>*@
+        </ul>
+        <ul class="nav navbar-nav" style="color:antiquewhite">
+            @*<li class="dropdown">
+                <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown" style="font-size:20px;font-family:'Comic Sans MS';color:cornflowerblue">
+                    View student<span class="caret"></span>*@
+            @*<ul class="dropdown-menu" role="menu">*@
+            @*<li style="color:blue;font-family:'Comic Sans Ms'">@Html.ActionLink("ADD STUDENT", "AddStudent", "Home", null, new { id = "item 1" })</li>*@
+            <li style="font-family:'Times New Roman'">  @Html.ActionLink("VIEW STUDENT", "viewstudent", "Home", null, new { id = "item 2" })</li>
+
+            @*</ul>*@
+            @*</a>
+                </li>*@
+        </ul>
+
+
+     
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav"></ul>
+    </div>
+</div>

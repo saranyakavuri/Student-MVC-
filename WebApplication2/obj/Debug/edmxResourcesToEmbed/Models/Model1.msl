@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="COReplacementOSBModelStoreContainer" CdmEntityContainer="COReplacementOSBEntities">
+    <EntitySetMapping Name="Student_Test">
+      <EntityTypeMapping TypeName="COReplacementOSBModel.Student_Test">
+        <MappingFragment StoreEntitySet="Student_Test">
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="class" ColumnName="class" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_student_test" FunctionName="COReplacementOSBModel.Store.sp_student_test" />
+    <FunctionImportMapping FunctionImportName="sp_studnt_view" FunctionName="COReplacementOSBModel.Store.sp_studnt_view">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="COReplacementOSBModel.sp_studnt_view_Result">
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="class" ColumnName="class" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_updatestudent" FunctionName="COReplacementOSBModel.Store.sp_updatestudent" />
+    <EntitySetMapping Name="stdlogins">
+      <EntityTypeMapping TypeName="COReplacementOSBModel.stdlogin">
+        <MappingFragment StoreEntitySet="stdlogin">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,45 @@
+﻿@model WebApplication2.Models.Student_Test
+@{
+    ViewBag.Title = "AddStudent";
+}
+
+<h2><center>Add Student</center></h2>
+<br />
+<script type="text/javascript">
+
+
+    function validate()
+    {
+        var name = document.getElementById('Validatetextbox').value;
+        if(name.toString().length==0)
+        {
+            alert("name must be entered");
+            return false;
+        }
+    }
+
+    
+</script>
+@using (Html.BeginForm())
+{
+
+    <form name="f1" method="post">
+        <br />
+        <center>
+
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="Name" id="name" /></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input type="text" name="Address" id="p1" /></td>
+                </tr>
+
+
+
+
+</center>
+        </form>
+        }

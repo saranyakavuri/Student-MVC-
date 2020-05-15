@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "smartlogin";
+    Layout = "~/Views/Shared/_Loginlayout.cshtml";
+}
+
+<h2><center>LoginPage</center></h2>
+<script type="text/javascript">
+    var pat = /[a-z]/;
+    @*var r=(?=.*[A-z])(?=.*[0-9])(?=.*?[!@#$%\^&*\(\)\-_+=;:'""\/\[\]{},.<>|`]).{8,32}*@
+    var re = /^[a-zA-Z0-9!@@#$%^&*]{8,}$/;
+    function val()
+    {
+        var u1 = document.getElementById("user").value;
+
+        var u2 = document.getElementById("p1").value;
+        if(pat.test(u1)==0)
+        {
+            alert("enter username with lowercase");
+            return false;
+        }
+
+        if(re.test(u2)==0)
+        {
+            alert("enter password with special case and maxlength of 8");
+            return false;
+        }
+    }
+
+
+</script>
+<br />
+@using (Html.BeginForm())
+{
+    <form name="f1" method="post">
+
+
+        <center>
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="User" id="user" /></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="pwd" id="p1" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="Submit" value="SUBMIT" class="btn btn-primary" onclick="return(val());" /></td>
+                </tr>
+            </table>
+        </center>
+    </form>
+}

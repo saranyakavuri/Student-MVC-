@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        .navbar-brand{
+            float:left;
+        }
+        .navbar-inverse{
+            
+        }
+        .sidenav {
+  height: 100%;
+  width: 100px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+    </style>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="sidenav">
+       @{ 
+           var Partialview = Html.Partial("_partialView2");
+           Partialview = new MvcHtmlString(Partialview.ToString() + "MY partial view");
+       }
+        @Partialview
+    </div>
+    <p style="text-align:right; font-family:'Times New Roman';font-size:large">@Session["user"]</p>
+
+    <div class="container body-content">
+        @RenderBody()
+       
+        <hr />
+          @{
+              Html.RenderPartial("_partialview");
+        }
+       
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

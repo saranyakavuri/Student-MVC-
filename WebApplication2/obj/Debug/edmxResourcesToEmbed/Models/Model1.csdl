@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="COReplacementOSBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Student_Test">
+    <Key>
+      <PropertyRef Name="student_id" />
+    </Key>
+    <Property Name="student_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="class" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="COReplacementOSBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Student_Test" EntityType="Self.Student_Test" />
+    <FunctionImport Name="sp_student_test">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="class" Mode="In" Type="String" />
+      <Parameter Name="id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_studnt_view" ReturnType="Collection(COReplacementOSBModel.sp_studnt_view_Result)" />
+    <FunctionImport Name="sp_updatestudent">
+      <Parameter Name="stdid" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="class" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="stdlogins" EntityType="COReplacementOSBModel.stdlogin" />
+  </EntityContainer>
+  <ComplexType Name="sp_studnt_view_Result">
+    <Property Type="Int32" Name="student_id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="class" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <EntityType Name="stdlogin">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
